@@ -26,7 +26,16 @@ namespace Heranca.Entidades
             Saldo = saldo;
         }
 
-        
+        public virtual string ContaInicial()
+        {
+            return "Numero da Conta: "
+                + Numero
+                + " Titular: "
+                + Titular
+                + " Saldo: R$"
+                + Saldo;
+        }
+
         public virtual void Retirada(double quantia)
         {
             Saldo -= quantia + 5.0;

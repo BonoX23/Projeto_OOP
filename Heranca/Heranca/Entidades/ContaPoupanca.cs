@@ -30,5 +30,17 @@ namespace Heranca.Entidades
             base.Retirada(quantia);
             Saldo -= 2.0;
         }
+
+        public override string ContaInicial()
+        {
+            return "Numero da Conta: "
+                + Numero
+                + "Titular: "
+                + Titular
+                + "Saldo: R$"
+                + Saldo
+                + "Taxa de Juros de: "
+                + TaxaDeJuros;
+        }
     }
 }

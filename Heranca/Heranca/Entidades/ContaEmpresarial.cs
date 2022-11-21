@@ -24,5 +24,17 @@
                 Saldo += quantia;
             }
         }
+
+        public override string ContaInicial()
+        {
+            return "Numero da Conta: "
+                + Numero
+                + " Titular: "
+                + Titular
+                + " Saldo: R$"
+                + Saldo
+                + " Limite de emprestimo: "
+                + LimiteDeEmprestimo;
+        }
     }
 }
