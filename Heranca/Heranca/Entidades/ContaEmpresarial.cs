@@ -25,14 +25,14 @@
             }
         }
 
-        public override string ContaInicial()
+        public override string ValorAtual()
         {
             return "Numero da Conta: "
                 + Numero
                 + " Titular: "
                 + Titular
                 + " Saldo: R$"
-                + Saldo
+                + Saldo.ToString("F2")
                 + " Limite de emprestimo: "
                 + LimiteDeEmprestimo;
         }

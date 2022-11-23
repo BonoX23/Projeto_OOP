@@ -26,20 +26,22 @@ namespace Heranca.Entidades
             Saldo = saldo;
         }
 
-        public virtual string ContaInicial()
+
+        public virtual string ValorAtual()
         {
             return "Numero da Conta: "
                 + Numero
                 + " Titular: "
                 + Titular
                 + " Saldo: R$"
-                + Saldo;
+                + Saldo.ToString("F2");
         }
 
         public virtual void Retirada(double quantia)
         {
             Saldo -= quantia + 5.0;
         }
+
 
         public void Deposito(double quantia)
         {
@@ -51,7 +53,7 @@ namespace Heranca.Entidades
             throw new NotImplementedException();
         }
 
-        public virtual void atualizarSaldo()
+        public virtual void Aplicacao()
         {
             throw new NotImplementedException();
         }

@@ -14,10 +14,10 @@ namespace Heranca.Entidades
         public ContaPoupanca(int numero, string titular, double saldo, double taxaDeJuros) : base(numero, titular, saldo)
         {
             TaxaDeJuros = taxaDeJuros;
-            atualizarSaldo();
+            Aplicacao();
         }
 
-        public override void atualizarSaldo()
+        public override void Aplicacao()
         {
             Saldo += Saldo * TaxaDeJuros;
         }
@@ -31,15 +31,15 @@ namespace Heranca.Entidades
             Saldo -= 2.0;
         }
 
-        public override string ContaInicial()
+        public override string ValorAtual()
         {
             return "Numero da Conta: "
                 + Numero
-                + "Titular: "
+                + " Titular: "
                 + Titular
-                + "Saldo: R$"
-                + Saldo
-                + "Taxa de Juros de: "
+                + " Saldo: R$"
+                + Saldo.ToString("F2")
+                + " Taxa de Juros de: "
                 + TaxaDeJuros;
         }
     }

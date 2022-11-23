@@ -12,7 +12,7 @@ namespace Heranca
         public void Retirada(double quantia);
         public void Deposito(double quantia);
         public void Emprestimo(double quantia);
-        public void atualizarSaldo();
+        public void Aplicacao();
         
     }
 }
