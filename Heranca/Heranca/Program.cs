@@ -7,7 +7,7 @@ namespace Heranca.Entidades
     {
         static void Main(string[] args)
         {
-            Dictionary<string,Conta> list = new Dictionary<string,Conta>();
+            Dictionary<string,Account> list = new Dictionary<string,Account>();
 
             Console.WriteLine("Quantas contas deseja cadastrar?");
             int n = int.Parse(Console.ReadLine());
@@ -23,33 +23,33 @@ namespace Heranca.Entidades
                 }
                 
                 Console.WriteLine($"\nQual o numero da conta #{i}?");
-                int numero = int.Parse(Console.ReadLine());
+                int number = int.Parse(Console.ReadLine());
                 Console.WriteLine("\nQual o nome do titular?");
-                string titular = Console.ReadLine();
+                string holder = Console.ReadLine();
                 Console.WriteLine("\nQual o saldo inicial? ex: 0.00");
-                double saldo = double.Parse(Console.ReadLine());
+                double balance = double.Parse(Console.ReadLine());
 
                 switch (type.ToLower())
                 {
                     case "c":
                         {
-                            list.Add("c", new Conta(numero, titular, saldo));
+                            list.Add("c", new Account(number, holder, balance));
                         };
                         break;
 
                     case "p":
                         {
                             Console.WriteLine("\nQual a taxa de juros?");
-                            double taxaDeJuros = double.Parse(Console.ReadLine());
-                            list.Add("p", new ContaPoupanca(numero, titular, saldo, taxaDeJuros));
+                            double interestRate = double.Parse(Console.ReadLine());
+                            list.Add("p", new SavingsAccount(number, holder, balance, interestRate));
                         };
                         break;
 
                     case "e":
                         {
                             Console.WriteLine("\nQual o limite de crédito?");
-                            double limiteDeEmprestimo = double.Parse(Console.ReadLine());
-                            list.Add("e", new ContaEmpresarial(numero, titular, saldo, limiteDeEmprestimo));
+                            double loanLimit = double.Parse(Console.ReadLine());
+                            list.Add("e", new BusinessAccount(number, holder, balance, loanLimit));
                         };
                         break;
 
@@ -64,9 +64,9 @@ namespace Heranca.Entidades
             }
             Console.WriteLine("\nDados das contas cadastradas:");
             
-            foreach (Conta conta in list.Values)
+            foreach (Account account in list.Values)
             {
-                Console.WriteLine(conta.ValorAtual());
+                Console.WriteLine(account.CurrentValue());
             }
             
             string OpType = "";
@@ -101,15 +101,15 @@ namespace Heranca.Entidades
                             if (subResp == "s")
                             {
                                 Console.WriteLine("\nQual o valor do saque?");
-                                double saque = double.Parse(Console.ReadLine());
-                                list["c"].Retirada(saque);
+                                double withdraw = double.Parse(Console.ReadLine());
+                                list["c"].Withdraw(withdraw);
                             }
 
                             else if (subResp == "d")
                             {
                                 Console.WriteLine("\nQual o valor para deposito?");
                                 double depos = double.Parse(Console.ReadLine());
-                                list["c"].Deposito(depos);
+                                list["c"].Deposit(depos);
                             }
 
                             else
@@ -131,15 +131,15 @@ namespace Heranca.Entidades
                             if (subResp == "s")
                             {
                                 Console.WriteLine("\nQual o valor do saque?");
-                                double saque = double.Parse(Console.ReadLine());
-                                list["p"].Retirada(saque);
+                                double withdraw = double.Parse(Console.ReadLine());
+                                list["p"].Withdraw(withdraw);
                             }
 
                             else if (subResp == "d")
                             {
                                 Console.WriteLine("\nQual o valor para deposito?");
                                 double despos = double.Parse(Console.ReadLine());
-                                list["p"].Deposito(despos);
+                                list["p"].Deposit(despos);
                             }
 
 
@@ -162,22 +162,22 @@ namespace Heranca.Entidades
                             if (subResp == "s")
                             {
                                 Console.WriteLine("\nQual o valor do saque?");
-                                double saque = double.Parse(Console.ReadLine());
-                                list["e"].Retirada(saque);
+                                double withdraw = double.Parse(Console.ReadLine());
+                                list["e"].Withdraw(withdraw);
                             }
 
                             else if (subResp == "d")
                             {
                                 Console.WriteLine("\nQual o valor para deposito?");
                                 double despos = double.Parse(Console.ReadLine());
-                                list["e"].Deposito(despos);
+                                list["e"].Deposit(despos);
                             }
 
                             else if (subResp == "e")
                             {
                                 Console.WriteLine("\nQual o valor do emprestimo?");
-                                double emprest = double.Parse(Console.ReadLine());
-                                list["e"].Emprestimo(emprest);
+                                double loan = double.Parse(Console.ReadLine());
+                                list["e"].Loan(loan);
                             }
 
 
@@ -196,18 +196,18 @@ namespace Heranca.Entidades
                 
                 }
 
-                foreach (Conta conta in list.Values)
+                foreach (Account account in list.Values)
                 {
-                    Console.WriteLine(conta.ValorAtual());
+                    Console.WriteLine(account.CurrentValue());
                 }
 
             }
 
             else
             {
-                foreach (Conta conta in list.Values)
+                foreach (Account account in list.Values)
                 {
-                    Console.WriteLine(conta.ValorAtual());
+                    Console.WriteLine(account.CurrentValue());
                 }
 
                 Console.WriteLine("Tenha um ótimo dia, até logo!");

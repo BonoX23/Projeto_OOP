@@ -9,51 +9,51 @@ namespace Heranca.Entidades
     
     //Private = somente a propria classe pode acessa-la ou atualiza-lá
     //Protect = somente a propria classe 
-    class Conta : IConta
+    class Account : IAccount
     {
-        public int Numero { get; private set; }
-        public string Titular { get; private set; }
-        public double Saldo { get; protected set; }
+        public int Number { get; private set; }
+        public string Holder { get; private set; }
+        public double Balance { get; protected set; }
 
-        public Conta()
+        public Account()
         {
         }
 
-        public Conta(int numero, string titular, double saldo)
+        public Account(int number, string holder, double balance)
         {
-            Numero = numero;
-            Titular = titular;
-            Saldo = saldo;
+            Number = number;
+            Holder = holder;
+            Balance = balance;
         }
 
 
-        public virtual string ValorAtual()
+        public virtual string CurrentValue()
         {
             return "Numero da Conta: "
-                + Numero
+                + Number
                 + " Titular: "
-                + Titular
+                + Holder
                 + " Saldo: R$"
-                + Saldo.ToString("F2");
+                + Balance.ToString("F2");
         }
 
-        public virtual void Retirada(double quantia)
+        public virtual void Withdraw(double amount)
         {
-            Saldo -= quantia + 5.0;
+            Balance -= amount + 5.0;
         }
 
 
-        public void Deposito(double quantia)
+        public void Deposit(double amount)
         {
-            Saldo += quantia;
+            Balance += amount;
         }
 
-        public virtual void Emprestimo(double quantia)
+        public virtual void Loan(double amount)
         {
             throw new NotImplementedException();
         }
 
-        public virtual void Aplicacao()
+        public virtual void Aplication()
         {
             throw new NotImplementedException();
         }

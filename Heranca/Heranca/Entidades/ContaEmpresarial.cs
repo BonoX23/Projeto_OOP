@@ -1,40 +1,40 @@
 ﻿namespace Heranca.Entidades
 {
-    class ContaEmpresarial : Conta
+    class BusinessAccount : Account
     {
-        public double LimiteDeEmprestimo { get; set; }
+        public double LoanLimit { get; set; }
 
-       public ContaEmpresarial()
+       public BusinessAccount()
         {
 
         }
 
-        public ContaEmpresarial(int numero, string titular, double saldo, double limiteDeEmprestimo) : base(numero, titular, saldo)
+        public BusinessAccount(int number, string holder, double balance, double loanLimit) : base(number, holder, balance)
         {
-            LimiteDeEmprestimo = limiteDeEmprestimo;
+            LoanLimit = loanLimit;
         }
 
         //O metodo a baixo tem como objetivo de acrescentar uma quantia ao saldo,
         //caso a quantia seja menor ou igual ao limite de emprestimo.
         
-        public override void Emprestimo(double quantia)
+        public override void Loan(double amount)
         {
-            if (quantia <= LimiteDeEmprestimo)
+            if (amount <= LoanLimit)
             {
-                Saldo += quantia;
+                Balance += amount;
             }
         }
 
-        public override string ValorAtual()
+        public override string CurrentValue()
         {
             return "Numero da Conta: "
-                + Numero
+                + Number
                 + " Titular: "
-                + Titular
+                + Holder
                 + " Saldo: R$"
-                + Saldo.ToString("F2")
+                + Balance.ToString("F2")
                 + " Limite de emprestimo: "
-                + LimiteDeEmprestimo;
+                + LoanLimit;
         }
     }
 }

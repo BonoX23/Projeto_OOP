@@ -7,12 +7,12 @@ using System.Threading.Tasks;
 
 namespace Heranca
 {
-    interface IConta
+    interface IAccount
     {
-        public void Retirada(double quantia);
-        public void Deposito(double quantia);
-        public void Emprestimo(double quantia);
-        public void Aplicacao();
+        public void Withdraw(double quantia);
+        public void Deposit(double quantia);
+        public void Loan(double quantia);
+        public void Aplication();
         
     }
 }
