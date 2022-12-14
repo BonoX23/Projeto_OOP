@@ -31,9 +31,9 @@ namespace Heranca.Entidades
         {
             return "Numero da Conta: "
                 + Number
-                + " Titular: "
+                + ", Titular: "
                 + Holder
-                + " Saldo: R$"
+                + ", Saldo atual: R$"
                 + Balance.ToString("F2");
         }
 
@@ -53,7 +53,7 @@ namespace Heranca.Entidades
             throw new NotImplementedException();
         }
 
-        public virtual void Aplication()
+        public virtual void UpdateBalance()
         {
             throw new NotImplementedException();
         }

@@ -29,11 +29,11 @@
         {
             return "Numero da Conta: "
                 + Number
-                + " Titular: "
+                + ", Titular: "
                 + Holder
-                + " Saldo: R$"
+                + ", Saldo atual: R$"
                 + Balance.ToString("F2")
-                + " Limite de emprestimo: "
+                + ", Limite de emprestimo: "
                 + LoanLimit;
         }
     }

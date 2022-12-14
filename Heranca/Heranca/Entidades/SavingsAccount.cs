@@ -14,10 +14,10 @@ namespace Heranca.Entidades
         public SavingsAccount(int number, string holder, double balance, double interestRate) : base(number, holder, balance)
         {
             InterestRate = interestRate;
-            Aplication();
+            UpdateBalance();
         }
 
-        public override void Aplication()
+        public override void UpdateBalance()
         {
             Balance += Balance * InterestRate;
         }
@@ -35,11 +35,11 @@ namespace Heranca.Entidades
         {
             return "Numero da Conta: "
                 + Number
-                + " Titular: "
+                + ", Titular: "
                 + Holder
-                + " Saldo: R$"
+                + ", Saldo atual: R$"
                 + Balance.ToString("F2")
-                + " Taxa de Juros de: "
+                + ", Taxa de Juros de: "
                 + InterestRate;
         }
     }

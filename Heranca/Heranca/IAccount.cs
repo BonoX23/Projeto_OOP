@@ -12,7 +12,7 @@ namespace Heranca
         public void Withdraw(double quantia);
         public void Deposit(double quantia);
         public void Loan(double quantia);
-        public void Aplication();
+        public void UpdateBalance();
         
     }
 }
