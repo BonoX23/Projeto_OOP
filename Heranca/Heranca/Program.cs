@@ -200,7 +200,8 @@ namespace Heranca.Entidades
                 {
                     Console.WriteLine(account.CurrentValue());
                 }
-
+                
+                Console.WriteLine("Tenha um ótimo dia, até logo!");
             }
 
             else

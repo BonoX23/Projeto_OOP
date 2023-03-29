@@ -11,9 +11,9 @@ namespace Heranca.Entidades
     //Protect = somente a propria classe 
     class Account : IAccount
     {
-        public int Number { get; private set; }
-        public string Holder { get; private set; }
-        public double Balance { get; protected set; }
+        public int Number { get; set; }
+        internal string Holder { get; set; }
+        internal double Balance { get; set; }
 
         public Account()
         {
