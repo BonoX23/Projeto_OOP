@@ -11,8 +11,8 @@ namespace AccountTests
             var Poupanca = new ContaPoupanca("Paulo", 1000, 0.10m);
 
             //Act
-            Poupanca.Deposit(100.00m);
-            Poupanca.Deposit(100.00m);
+            Poupanca.Deposito(100.00m);
+            Poupanca.Deposito(100.00m);
 
             //Assert
             Assert.Equal(231.00m, Poupanca.Balance);
@@ -41,7 +41,7 @@ namespace AccountTests
             var Emprestimo = new ContaEmpresarial("Antonio", 2001, 500.00m);
 
             //Act
-            Emprestimo.Deposit(100.00m);
+            Emprestimo.Deposito(100.00m);
 
             //Assert
             Assert.Equal(100.00m, Emprestimo.Balance);

@@ -6,7 +6,8 @@ using System.Threading.Tasks;
 
 namespace Heranca.Services
 {
-    internal interface Interface1
+    public interface IContaService
     {
+        void Saldos(params IConta[] contas);
     }
 }

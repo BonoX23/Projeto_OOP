@@ -6,53 +6,20 @@ namespace Heranca.Entidades
 {
     class Program
     {
-        public interface IPatrimonioService
-        {
-            void SomaPatrimonio(List<IConta> contas);
-        }
-
-        public class PatrimonioService : IPatrimonioService
-        {
-            public void SomaPatrimonio(List<IConta> contas)
-            {
-                var patrimonio = 0m;
-
-                foreach (IConta conta in contas)
-                {
-                    patrimonio += conta.Saldo();
-                }
-
-                Console.WriteLine($"O seu patrimonio total é de {patrimonio:N2}");
-            }
-        }
-
-        public interface IContaService
-        {
-            void Saldos(params IConta[] contas);
-        }
-
-        public class ServicosDeContas : IContaService
-        {
-            public void Saldos(params IConta[] contas)
-            {
-                foreach (IConta conta in contas)
-                {
-                    conta.MostraSaldo();
-                }
-            }
-        }
         static void Main(string[] args)
         {
 
             var contaPoupanca = new ContaPoupanca("Ricardo", 1000, 0.10m);
-            contaPoupanca.Deposit(500.00m);
+            contaPoupanca.Deposito(500.00m);
 
             var contaEmpresarial = new ContaEmpresarial("Alexandre", 1001, 200.00m);
-            contaEmpresarial.Deposit(700.00m);
+            contaEmpresarial.Deposito(700.00m);
 
             var patrimonioService = new PatrimonioService();
 
             patrimonioService.SomaPatrimonio(new List<IConta>() { contaPoupanca, contaEmpresarial });
+
+            Console.ReadKey();
 
             //List<ContaBase> sumcontas = new List<ContaBase>();
 
@@ -67,7 +34,6 @@ namespace Heranca.Entidades
 
             //Console.WriteLine($"O saldo total das contas é {saldoTotal}");
 
-            Console.ReadKey();
 
 
             //Dictionary<string, Account> list = new Dictionary<string, Account>();
