@@ -3,13 +3,14 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Heranca.Services;
 
 namespace Heranca.Entidades
 {
-    
+
     //Private = somente a propria classe pode acessa-la ou atualiza-lá
     //Protect = somente a propria classe 
-    class Account : IAccount
+    class Account : IServices
     {
         public int Number { get; set; }
         internal string Holder { get; set; }
